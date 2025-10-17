@@ -72,7 +72,7 @@ export default fp<InertiaConfig>(async function inertiaPlugin(
   // Add Inertia instance to reply
   fastify.addHook("onRequest", (request, reply, done) => {
     const adapter = new FastifyAdapter(request, reply);
-    reply.inertia = new Inertia(adapter, config, vite);
+    reply.inertia = new Inertia(adapter, config, vite as any);
     done();
   });
 });
