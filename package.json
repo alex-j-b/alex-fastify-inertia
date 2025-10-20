@@ -11,10 +11,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mahendra7041/fastify-inertia.git"
+    "url": "git+https://github.com/alex-j-b/alex-fastify-inertia.git"
   },
   "license": "MIT",
-  "author": "Mahendra Chavda",
+  "author": "Alexis Boix",
   "type": "module",
   "main": "dist/index.js",
   "files": [
