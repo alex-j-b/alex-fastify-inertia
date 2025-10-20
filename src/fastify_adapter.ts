@@ -1,5 +1,5 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
-import { Adapter } from "node-inertiajs";
+import { Adapter } from "alex-node-inertiajs";
 
 /**
  * Fastify Adapter for Inertia.js

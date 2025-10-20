@@ -5,7 +5,7 @@ import {
   Inertia,
   Flash,
   type InertiaConfig,
-} from "node-inertiajs";
+} from "alex-node-inertiajs";
 import { ViteDevServer, createServer as createViteServer } from "vite";
 import { FastifyAdapter } from "./fastify_adapter.js";
 
