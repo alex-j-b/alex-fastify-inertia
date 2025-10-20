@@ -1,5 +1,5 @@
 {
-  "name": "fastify-inertiajs",
+  "name": "alex-fastify-inertiajs",
   "version": "1.0.5",
   "description": "A lightweight Fastify plugin for Inertia.js that lets you build modern single-page applications with server-side rendering.",
   "keywords": [
