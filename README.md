@@ -63,13 +63,13 @@ Install the necessary dependencies for Fastify and Inertia:
 
 ```bash
 # For React (used in this guide)
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/react
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/react
 
 # For Vue
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/vue3
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/vue3
 
 # For Svelte
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/svelte
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/svelte
 
 # Additional dev dependencies
 npm install -D nodemon
@@ -90,7 +90,7 @@ my-inertia-app/
 │   └── ssr.jsx           # SSR entry point (optional)
 ├── index.html            # HTML template
 ├── vite.config.js        # Vite configuration
-├── server.js             # Express server
+├── server.js             # Fastify server
 └── package.json
 ```
 
@@ -114,13 +114,12 @@ my-inertia-app/
 </html>
 ```
 
-### Step 5: Express Server Setup (`server.js`)
+### Step 5: Fastify Server Setup (`server.js`)
 
 ```javascript
 import fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 import fastifyCookie from "@fastify/cookie";
-import fastifySession from "@fastify/session";
 import inertia from "fastify-inertiajs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -142,17 +141,6 @@ async function bootstrap() {
   }
 
   await app.register(fastifyCookie);
-
-  await app.register(fastifySession, {
-    secret:
-      process.env.SESSION_SECRET ||
-      "a secret with minimum length of 32 characters",
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-      secure: process.env.NODE_ENV === "production",
-    },
-  });
 
   await app.register(inertia, {
     rootElementId: "root",
@@ -256,7 +244,7 @@ export default function render(page) {
 
 ### `inertia(config?, vite?)`
 
-Initializes and returns the Express middleware.
+Initializes and returns the Fastify middleware.
 
 ```javascript
 await fastify.register(inertia, inertiaConfig);
