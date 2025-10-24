@@ -90,7 +90,7 @@ my-inertia-app/
 │   └── ssr.jsx           # SSR entry point (optional)
 ├── index.html            # HTML template
 ├── vite.config.js        # Vite configuration
-├── server.js             # Express server
+├── server.js             # Fastify server
 └── package.json
 ```
 
@@ -114,7 +114,7 @@ my-inertia-app/
 </html>
 ```
 
-### Step 5: Express Server Setup (`server.js`)
+### Step 5: Fastify Server Setup (`server.js`)
 
 ```javascript
 import fastify from "fastify";
@@ -244,7 +244,7 @@ export default function render(page) {
 
 ### `inertia(config?, vite?)`
 
-Initializes and returns the Express middleware.
+Initializes and returns the Fastify middleware.
 
 ```javascript
 await fastify.register(inertia, inertiaConfig);
