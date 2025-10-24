@@ -1,5 +1,5 @@
 import fp from "fastify-plugin";
-import type { FastifyInstance, FastifyRequest } from "fastify";
+import type { FastifyInstance } from "fastify";
 import { defineConfig, Inertia, type InertiaConfig } from "node-inertiajs";
 import { ViteDevServer, createServer as createViteServer } from "vite";
 

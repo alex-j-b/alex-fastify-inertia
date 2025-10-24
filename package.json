@@ -35,6 +35,6 @@
     "@types/node": "24.9.1",
     "fastify-plugin": "5.1.0",
     "fp": "0.1.0",
-    "node-inertiajs": "1.1.2"
+    "node-inertiajs": "github:alex-j-b/node-inertiajs#feat/remove-fastify-session"
   }
 }
