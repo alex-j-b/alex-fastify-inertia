@@ -13,7 +13,6 @@ declare module "fastify" {
     inertia: InstanceType<typeof Inertia>;
   }
   interface FastifyRequest {
-    session?: Record<string, any>;
     flash: InstanceType<typeof Flash>;
   }
 }
@@ -49,15 +48,6 @@ export default fp<InertiaConfig>(async function inertiaPlugin(
 
   // Add flash middleware FIRST
   fastify.addHook("onRequest", (request, reply, done) => {
-    if (!request.session) {
-      done(new Error("Flash requires fastify/session plugin."));
-      return;
-    }
-
-    if (!request.session.flash) {
-      request.session.flash = {};
-    }
-
     // Create Flash instance and attach to request
     const flash = new Flash(request as any, reply as any);
     request.flash = flash;

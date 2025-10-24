@@ -63,13 +63,13 @@ Install the necessary dependencies for Fastify and Inertia:
 
 ```bash
 # For React (used in this guide)
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/react
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/react
 
 # For Vue
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/vue3
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/vue3
 
 # For Svelte
-npm install fastify-inertiajs @fastify/cookie @fastify/session @fastify/static @inertiajs/svelte
+npm install fastify-inertiajs @fastify/cookie @fastify/static @inertiajs/svelte
 
 # Additional dev dependencies
 npm install -D nodemon
@@ -120,7 +120,6 @@ my-inertia-app/
 import fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 import fastifyCookie from "@fastify/cookie";
-import fastifySession from "@fastify/session";
 import inertia from "fastify-inertiajs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -142,17 +141,6 @@ async function bootstrap() {
   }
 
   await app.register(fastifyCookie);
-
-  await app.register(fastifySession, {
-    secret:
-      process.env.SESSION_SECRET ||
-      "a secret with minimum length of 32 characters",
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-      secure: process.env.NODE_ENV === "production",
-    },
-  });
 
   await app.register(inertia, {
     rootElementId: "root",
