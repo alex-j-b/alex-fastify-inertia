@@ -1,13 +1,13 @@
-# Express-Inertia (with Svelte)
+# Fastify-Inertia (with Svelte)
 
-A starter template for building modern single-page applications using **express-inertia** with **svelte**, pre-configured with **vite** and server-side rendering (SSR) support.
+A starter template for building modern single-page applications using **fastify-inertia** with **svelte**, pre-configured with **vite** and server-side rendering (SSR) support.
 
 ## Quick Start
 
 Create a new project using the template
 
 ```bash
-npx degit mahendra7041/express-inertia/examples/svelte my-inertia-app
+npx degit mahendra7041/fastify-inertia/examples/svelte my-inertia-app
 
 cd my-inertia-app
 npm install

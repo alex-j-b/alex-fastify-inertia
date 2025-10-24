@@ -1,9 +1,7 @@
 import fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 import fastifyCookie from "@fastify/cookie";
-import fastifySession from "@fastify/session";
 import inertiaConfig from "./configs/inertia.config.js";
-import sessionConfig from "./configs/session.config.js";
 import inertia from "fastify-inertiajs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -25,7 +23,6 @@ async function bootstrap() {
   }
 
   await app.register(fastifyCookie);
-  await app.register(fastifySession, sessionConfig);
 
   await app.register(inertia, inertiaConfig);
 
